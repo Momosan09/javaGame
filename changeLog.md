@@ -1,4 +1,4 @@
-##**version 0.0.1**
+## **version 0.0.1**
 
 >*This is the first version uploaded, the project was already started, so ill mention all the things that the project has so far*
 
@@ -11,7 +11,7 @@
 **-e-n-d--e-n-d-**
 >*Momosan09*
 
-##**version 0.0.2**
+## **version 0.0.2**
 
 >*Added*
 1. A larger map
