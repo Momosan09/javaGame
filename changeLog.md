@@ -10,3 +10,13 @@
 
 **-e-n-d--e-n-d-**
 >*Momosan09*
+
+##**version 0.0.2**
+
+>*Added*
+1. A larger map
+2. A player camera (the player is in the middle of the screen and the world is moving)
+3. The map only renders the visible tiles (Not the full map, this optimizes the game)
+
+**-e-n-d--e-n-d**
+>*Momosan09*
