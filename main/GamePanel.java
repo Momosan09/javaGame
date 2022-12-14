@@ -21,8 +21,8 @@ public class GamePanel extends JPanel implements Runnable {
     public final int screenHeight = tileSize * maxScreenRow; // 768 pixeles
 
     //WORLD SETTINGS
-    public final int maxWorldCol = 15;//el tamaño del estas variables y del mapa tienen que ser los iguales
-    public final int maxWorldRow = 15;//el tamaño del estas variables y del mapa tienen que ser los iguales
+    public final int maxWorldCol = 12;//el tamaño del estas variables y del mapa tienen que ser los iguales
+    public final int maxWorldRow = 12;//el tamaño del estas variables y del mapa tienen que ser los iguales
     public final int worldWidth = tileSize * maxWorldCol;
     public final int worldHeight = tileSize * maxWorldRow;
 
@@ -98,7 +98,7 @@ public class GamePanel extends JPanel implements Runnable {
 
         tileM.draw(g2);
         player.draw(g2);
-
+        
         g2.dispose();
     }
 

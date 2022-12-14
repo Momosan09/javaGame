@@ -9,6 +9,7 @@ import javax.imageio.ImageIO;
 import java.awt.Graphics2D;
 
 import main.GamePanel;
+import entity.EntityNpc;
 
 public class TileManager {
     GamePanel gp;
@@ -52,7 +53,7 @@ public class TileManager {
 
             tile[2] = new Tile();
             tile[2].image = ImageIO.read(getClass().getResourceAsStream(floor_dome_0_Decorado));
-            tile[2].collision = true;
+            tile[2].collision = false;
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -83,6 +84,7 @@ public class TileManager {
                     col = 0;
                     row++;
                 }
+
             }
             br.close();
         } catch (Exception e) {
@@ -119,6 +121,7 @@ public class TileManager {
                 worldRow++;
             }
         }
+
 
     }
 

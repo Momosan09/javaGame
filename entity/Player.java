@@ -36,8 +36,8 @@ public class Player extends Entity {
 
     public void setDefaultValues() {
         /* posicion del personaje */
-        worldX = gp.tileSize * (gp.maxWorldCol / 2);
-        worldY = gp.tileSize * (gp.maxScreenRow / 2);
+        worldX = (gp.tileSize * (gp.maxWorldCol / 2)) - gp.tileSize / 2;
+        worldY = gp.tileSize * (gp.maxScreenRow / 2) - gp.tileSize / 2;
         speed = 3;
         direction = "idle";
 
