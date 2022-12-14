@@ -12,15 +12,24 @@ import main.GamePanel;
 
 public class TileManager {
     GamePanel gp;
-    Tile[] tile;
-    int mapTileNum[][];
+    public Tile[] tile;
+    public int mapTileNum[][];
 
     // PATHS
+/* 
     String grass_0_Path = "../res/Tiles/grass_0.png";
     String water_0_Path = "../res/Tiles/water_0.png";
     String wall_0_Path = "../res/Tiles/wall_0.png";
 
     String map_0_Path = "../res/Maps/map0.txt";
+*/
+    String floor_dome_0_Decorado = "../res/Tiles/newTiles/Floor_Dome_0_Decorado.png";
+    String floor_dome_0 = "../res/Tiles/newTiles/Floor_Dome_0.png";
+    String ground_0 = "../res/Tiles/newTiles/ground_0.png"; 
+
+
+    String map_1_Path = "../res/Maps/map1.txt";
+    
 
     public TileManager(GamePanel gp) {
         this.gp = gp;
@@ -29,20 +38,21 @@ public class TileManager {
         mapTileNum = new int[gp.maxWorldCol][gp.maxWorldRow];
 
         getTileImage();
-        loadMap(map_0_Path);
+        loadMap(map_1_Path);
     }
 
     public void getTileImage() {
         try {
 
             tile[0] = new Tile();
-            tile[0].image = ImageIO.read(getClass().getResourceAsStream(grass_0_Path));
+            tile[0].image = ImageIO.read(getClass().getResourceAsStream(ground_0));
 
             tile[1] = new Tile();
-            tile[1].image = ImageIO.read(getClass().getResourceAsStream(water_0_Path));
+            tile[1].image = ImageIO.read(getClass().getResourceAsStream(floor_dome_0));
 
             tile[2] = new Tile();
-            tile[2].image = ImageIO.read(getClass().getResourceAsStream(wall_0_Path));
+            tile[2].image = ImageIO.read(getClass().getResourceAsStream(floor_dome_0_Decorado));
+            tile[2].collision = true;
 
         } catch (IOException e) {
             e.printStackTrace();

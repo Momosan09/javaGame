@@ -1,5 +1,6 @@
 package entity;
 
+import java.awt.Rectangle;
 import java.awt.Graphics2D;
 import java.io.IOException;
 import java.awt.image.BufferedImage;
@@ -22,14 +23,21 @@ public class Player extends Entity {
         screenX = gp.screenWidth / 2 - (gp.tileSize / 2);
         screenY = gp.screenHeight / 2 - (gp.tileSize / 2);
 
+        //TAMAÑO DE LA COLISION
+        solidArea = new Rectangle();
+        solidArea.x = 8;
+        solidArea.y = 8;
+        solidArea.width = gp.tileSize - 16;
+        solidArea.height = gp.tileSize - 16;
+
         setDefaultValues();
         getPlayerImage();
     }
 
     public void setDefaultValues() {
-        /*posicion del personaje */
-        worldX = gp.tileSize * 20;
-        worldY = gp.tileSize * 5;
+        /* posicion del personaje */
+        worldX = gp.tileSize * (gp.maxWorldCol / 2);
+        worldY = gp.tileSize * (gp.maxScreenRow / 2);
         speed = 3;
         direction = "idle";
 
@@ -67,20 +75,41 @@ public class Player extends Entity {
 
         if (keyH.upPressed) {
             direction = "up";
-            worldY -= speed;
         } else if (keyH.downPressed) {
             direction = "down";
-            worldY += speed;
         } else if (keyH.leftPressed) {
             direction = "left";
-            worldX -= speed;
         } else if (keyH.rightPressed) {
             direction = "right";
-            worldX += speed;
         } else {
             direction = "idle";
         }
 
+        // CHECK TILE COLLISION
+        collisionOn = false;
+        gp.cChecker.checkTile(this);
+
+        // if collision is false, player can move
+        if (!collisionOn) {
+            switch (direction) {
+                case "up":
+                    worldY -= speed;
+
+                    break;
+                case "down":
+                    worldY += speed;
+
+                    break;
+                case "left":
+                    worldX -= speed;
+
+                    break;
+                case "right":
+                    worldX += speed;
+
+                    break;
+            }
+        }
     }
 
     public void draw(Graphics2D g2) {

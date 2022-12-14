@@ -21,8 +21,8 @@ public class GamePanel extends JPanel implements Runnable {
     public final int screenHeight = tileSize * maxScreenRow; // 768 pixeles
 
     //WORLD SETTINGS
-    public final int maxWorldCol = 32;//el tamaño del estas variables y del mapa tienen que ser los iguales
-    public final int maxWorldRow = 12;//el tamaño del estas variables y del mapa tienen que ser los iguales
+    public final int maxWorldCol = 15;//el tamaño del estas variables y del mapa tienen que ser los iguales
+    public final int maxWorldRow = 15;//el tamaño del estas variables y del mapa tienen que ser los iguales
     public final int worldWidth = tileSize * maxWorldCol;
     public final int worldHeight = tileSize * maxWorldRow;
 
@@ -34,7 +34,8 @@ public class GamePanel extends JPanel implements Runnable {
     KeyHandler keyH = new KeyHandler();
     Thread gameThread;
     public Player player = new Player(this, keyH);
-
+    public CollisionChecker cChecker = new CollisionChecker(this);
+    
     public GamePanel() {
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));
         this.setBackground(Color.black);
