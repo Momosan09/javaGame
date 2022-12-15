@@ -11,12 +11,12 @@ import main.KeyHandler;
 
 public class Player extends Entity {
 
-    GamePanel gp;
     KeyHandler keyH;
 
     public final int screenX, screenY;
 
     public Player(GamePanel gp, KeyHandler keyH) {
+        //super(gp);
         this.gp = gp;
         this.keyH = keyH;
 

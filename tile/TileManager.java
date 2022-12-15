@@ -9,7 +9,7 @@ import javax.imageio.ImageIO;
 import java.awt.Graphics2D;
 
 import main.GamePanel;
-import entity.EntityNpc;
+//import entity.EntityNpc;
 
 public class TileManager {
     GamePanel gp;

@@ -7,6 +7,7 @@ import java.awt.Graphics2D;
 import javax.swing.JPanel;
 
 import entity.Player;
+import object.SuperObject;
 import tile.TileManager;
 
 public class GamePanel extends JPanel implements Runnable {
@@ -33,8 +34,10 @@ public class GamePanel extends JPanel implements Runnable {
     TileManager tileM = new TileManager(this);
     KeyHandler keyH = new KeyHandler();
     Thread gameThread;
-    public Player player = new Player(this, keyH);
+    public Player player = new Player(this,keyH);
     public CollisionChecker cChecker = new CollisionChecker(this);
+    public AssetSetter ASetter = new AssetSetter(this);
+    public SuperObject obj[] = new SuperObject[10];//esto dice que solo podes mostrar 10 objetos a la vez, no es la cantidad de objetos que se pueden agregar
     
     public GamePanel() {
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));
@@ -42,6 +45,10 @@ public class GamePanel extends JPanel implements Runnable {
         this.setDoubleBuffered(true);
         this.addKeyListener(keyH);
         this.setFocusable(true);
+    }
+
+    public void setupGame(){
+        ASetter.setObject();
     }
 
     public void startGameThread() {
@@ -96,7 +103,17 @@ public class GamePanel extends JPanel implements Runnable {
         super.paintComponent(g);// "super" es la clase padre de la clase en la que estoy
         Graphics2D g2 = (Graphics2D) g;
 
+        //Tile
         tileM.draw(g2);
+        
+        //Object
+        for(int i=0;i<obj.length;++i){
+            if(obj[i] != null){//checkear que el vector no este vacio
+                obj[i].draw(g2, this);
+            }
+        }
+
+        //Player
         player.draw(g2);
         
         g2.dispose();
