@@ -27,7 +27,11 @@
 
 1. Collision for the player
 2. New tiles
-2. Now i can put objects on the game and display them on the map
+3. Now i can put objects on the game and display them on the map
+4. Now the player can collect items
 >*Knowed bugs*
 
-1. The player collision does not work some times when you are moving in a vertical position and then change to a horizontal position in a place where the vertical "wall" ends
+1. The player collision does not work some times when you are moving in a vertical position and then change to a horizontal position in a place where the vertical "wall" ends.
+
+**-e-n-d--e-n-d**
+>*Momosan09*

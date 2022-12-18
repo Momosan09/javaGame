@@ -13,5 +13,6 @@ public class OBJ_0 extends SuperObject{
         }catch(IOException e){
             e.printStackTrace();
         }
+        collision = false; //el objeto tiene colision;
     }
 }

@@ -20,6 +20,7 @@ public class Entity {
     public String direction;
 
     public Rectangle solidArea = new Rectangle(0,0,48,48);//Colision por defecto, cambiar dentro de cada npc
+    public int solidAreaDefaultX, solidAreaDefaultY;
     public boolean collisionOn = false;
 
 //abstract class significa que no instanciamos la clase directamente, siempre por Player class o npc class
